@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearFlow | Data Engineering for SMBs</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cormorant for editorial serif, Space Grotesk for brutalist data/numbers -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <nav class="navbar border-bottom">
+        <div class="container nav-grid">
+            <div class="logo">ClearFlow</div>
+            <div class="nav-links">
+                <a href="#ledger">Industries</a>
+                <a href="#services">Capabilities</a>
+                <a href="#contact" class="btn-primary">Initiate Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero border-bottom">
+        <div class="container hero-grid">
+            <div class="hero-copy slide-up">
+                <span class="excel-badge">EXCEL / GOOGLE SHEETS</span>
+                <h1>Stop wrestling <br>with <i>spreadsheets.</i></h1>
+                <p class="hero-sub">You run a business, not a data entry firm. We build engineered workflows that instantly reconcile your messy data and save your operations 10+ hours a week.</p>
+                <a href="#contact" class="btn-solid">Commission a Workflow</a>
+            </div>
+            
+            <div class="hero-visual fade-in delay-1">
+                <!-- CSS Built Broken Spreadsheet Concept -->
+                <div class="mock-sheet parallax" data-speed="0.05">
+                    <div class="sheet-header">
+                        <div class="cell header">A</div><div class="cell header">B</div><div class="cell header">C</div>
+                    </div>
+                    <div class="sheet-row">
+                        <div class="cell index">1</div><div class="cell">Inv_492</div><div class="cell error">#N/A</div>
+                    </div>
+                    <div class="sheet-row">
+                        <div class="cell index">2</div><div class="cell">Client_B</div><div class="cell">14/10/24</div>
+                    </div>
+                    <div class="sheet-row">
+                        <div class="cell index">3</div><div class="cell error">#REF!</div><div class="cell warning">MISSING</div>
+                    </div>
+                </div>
+                
+                <div class="mock-sheet clean-sheet">
+                    <div class="sheet-header success">
+                        <div class="cell header">A</div><div class="cell header">B</div><div class="cell header">C</div>
+                    </div>
+                    <div class="sheet-row">
+                        <div class="cell index">1</div><div class="cell">INV-492</div><div class="cell">$1,450.00</div>
+                    </div>
+                    <div class="sheet-row">
+                        <div class="cell index">2</div><div class="cell">INV-493</div><div class="cell">$2,100.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="formula-banner border-bottom fade-in">
+        <div class="container">
+            <code><span class="error-text">=VLOOKUP(</span>A2, 'Messy Data'!$A$1:$F$5000, 6, FALSE<span class="error-text">) -> #REF!</span></code>
+            <p>The formula that broke at 4:55 PM on a Friday. We fix this permanently.</p>
+        </div>
+    </section>
+
+    <section id="ledger" class="section border-bottom alt-bg">
+        <div class="container">
+            <h2 class="section-title text-cream slide-up">The Industry Ledger</h2>
+            
+            <div class="ledger-grid">
+                <article class="ledger-column slide-up delay-1">
+                    <div class="ledger-header">01. Logistics & Fleet</div>
+                    <p class="ledger-desc">Stop manually cross-referencing driver logs with fuel receipts and dispatch software.</p>
+                    <div class="ledger-data">
+                        <span class="label">Before</span>
+                        <span class="value">14 Disjointed CSVs</span>
+                        <span class="label">ClearFlow Standard</span>
+                        <span class="value success-text">1 Unified Dashboard</span>
+                    </div>
+                </article>
+                
+                <article class="ledger-column slide-up delay-2">
+                    <div class="ledger-header">02. Medical Clinics</div>
+                    <p class="ledger-desc">End the nightmare of copy-pasting patient intake forms into billing software at month-end.</p>
+                    <div class="ledger-data">
+                        <span class="label">Before</span>
+                        <span class="value">4 Hours / Week</span>
+                        <span class="label">ClearFlow Standard</span>
+                        <span class="value success-text">12 Seconds / Week</span>
+                    </div>
+                </article>
+
+                <article class="ledger-column slide-up delay-3">
+                    <div class="ledger-header">03. Trades & Construction</div>
+                    <p class="ledger-desc">Automatically calculate job profitability by syncing raw material costs with hourly labor sheets.</p>
+                    <div class="ledger-data">
+                        <span class="label">Before</span>
+                        <span class="value">Blind Quoting</span>
+                        <span class="label">ClearFlow Standard</span>
+                        <span class="value success-text">Real-time Margins</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section border-bottom">
+        <div class="container">
+            <h2 class="section-title slide-up">Technical Capabilities</h2>
+            
+            <div class="capabilities-grid">
+                <div class="cap-item slide-up delay-1">
+                    <h3>Custom Templates</h3>
+                    <p>Foolproof, locked-down Excel & Google Sheets templates that prevent your staff from breaking formulas.</p>
+                </div>
+                <div class="cap-item slide-up delay-2">
+                    <h3>Data Reconciliation</h3>
+                    <p>Automated scripts (VBA/Python) that instantly format and merge messy exports from legacy software.</p>
+                </div>
+                <div class="cap-item slide-up delay-3">
+                    <h3>Executive Dashboards</h3>
+                    <p>Real-time KPI tracking. Stop managing by gut feeling and see your exact margins instantly.</p>
+                </div>
+                <div class="cap-item slide-up delay-4">
+                    <h3>Automated Reporting</h3>
+                    <p>We turn your messy raw data into beautifully formatted, daily PDF reports for your management team with zero manual effort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trust" class="section border-bottom alt-bg">
+        <div class="container">
+            <h2 class="section-title text-cream slide-up">The ClearFlow Guarantee</h2>
+            <div class="trust-grid">
+                <div class="trust-item slide-up delay-1">
+                    <h3>100% Data Sovereignty</h3>
+                    <p>Data privacy is critical. We build templates and scripts that run entirely on your local machines or private cloud. Your data never leaves your organization, ensuring total compliance.</p>
+                </div>
+                <div class="trust-item slide-up delay-2">
+                    <h3>Zero Staff Training</h3>
+                    <p>We don't force you to learn new, complicated SaaS platforms. Our automations work silently in the background of the tools your team already uses (Excel, Google Sheets, PDF).</p>
+                </div>
+                <div class="trust-item slide-up delay-3">
+                    <h3>Break-Fix Coverage</h3>
+                    <p>Terrified of an automation breaking and halting operations? We offer ongoing maintenance retainers. If an API changes or a script fails, we fix it within 4 hours. No stress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container contact-grid">
+            <div class="contact-copy slide-up">
+                <h2 class="section-title">Initiate a Project</h2>
+                <p>We do not bill hourly. We deliver fixed-price, engineered solutions to your most painful operational bottlenecks.</p>
+                <p class="mt-2">Describe your broken process, and we will return a technical assessment within 24 hours.</p>
+            </div>
+            
+            <form class="editorial-form slide-up delay-2" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Proprietor Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Direct Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="details">The Operational Bottleneck</label>
+                    <textarea id="details" rows="4" placeholder="e.g. I spend 3 hours every Monday fixing dates in Excel..." required></textarea>
+                </div>
+                <button type="submit" class="btn-solid block">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="border-top">
+        <div class="container footer-flex">
+            <div class="logo">ClearFlow</div>
+            <div class="footer-meta">
+                <p>Engineered in Canada. &copy; 2024</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
