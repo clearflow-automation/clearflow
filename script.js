@@ -33,30 +33,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission handling (Mock)
+    // Form submission via Web3Forms
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
-            
-            btn.innerText = "Processing...";
+
+            btn.innerText = "Sending...";
+            btn.disabled = true;
             btn.style.background = "var(--accent)";
             btn.style.borderColor = "var(--accent)";
             btn.style.color = "white";
 
+            try {
+                const formData = new FormData(contactForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    btn.innerText = "Inquiry Received ✓";
+                    contactForm.reset();
+                } else {
+                    btn.innerText = "Something went wrong";
+                    btn.style.background = "#c0392b";
+                    btn.style.borderColor = "#c0392b";
+                }
+            } catch (err) {
+                btn.innerText = "Network error — try again";
+                btn.style.background = "#c0392b";
+                btn.style.borderColor = "#c0392b";
+            }
+
+            btn.disabled = false;
             setTimeout(() => {
-                btn.innerText = "Inquiry Received";
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.background = "";
-                    btn.style.borderColor = "";
-                    btn.style.color = "";
-                }, 3000);
-            }, 1500);
+                btn.innerText = originalText;
+                btn.style.background = "";
+                btn.style.borderColor = "";
+                btn.style.color = "";
+            }, 3000);
         });
     }
 });

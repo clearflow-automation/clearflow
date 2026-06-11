@@ -113,13 +113,22 @@ h1 i, h2 i { font-style: italic; color: var(--accent); }
 
 /* The Industry Ledger */
 .section-title { font-size: 4rem; margin-bottom: 4rem; }
-.ledger-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border-alt); border-left: 1px solid var(--border-alt); }
+.ledger-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border-alt); border-left: 1px solid var(--border-alt); }
 .ledger-column { padding: 3rem; border-right: 1px solid var(--border-alt); border-bottom: 1px solid var(--border-alt); display: flex; flex-direction: column; }
 .ledger-header { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-alt); }
 .ledger-desc { color: #888; margin-bottom: 3rem; font-size: 1rem; flex-grow: 1; }
 .ledger-data { display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #333; padding-top: 1.5rem; margin-top: auto; }
 .ledger-data .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
 .ledger-data .value { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: #ccc;}
+
+/* Case Studies */
+.case-study-card { background: white; border: 1px solid var(--border-color); box-shadow: 10px 10px 0px rgba(0,0,0,0.03); padding: 4rem; margin-top: 2rem; }
+.case-study-content h3 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent); }
+.case-study-author { font-size: 1.125rem; color: var(--text-muted); font-style: italic; margin-bottom: 3rem; }
+.case-study-metrics { display: flex; gap: 4rem; border-top: 1px solid var(--border-color); padding-top: 2rem; flex-wrap: wrap; }
+.metric { display: flex; flex-direction: column; gap: 0.5rem; }
+.metric-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; }
+.metric-value { font-size: 2.5rem; font-family: var(--font-data); font-weight: 600; color: var(--text-main); }
 
 /* Capabilities Grid */
 .capabilities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border-color); border: 1px solid var(--border-color); }
@@ -152,7 +161,9 @@ h1 i, h2 i { font-style: italic; color: var(--accent); }
     .nav-links a:not(.btn-primary) { display: none; }
     .ledger-grid, .capabilities-grid, .contact-grid, .trust-grid { grid-template-columns: 1fr; border: none;}
     .ledger-column { border: 1px solid var(--border-alt); margin-bottom: 1rem; }
-    .cap-item, .trust-item { border: 1px solid var(--border-color); margin-bottom: 1rem; padding: 2rem; }
+    .cap-item, .trust-item, .case-study-card { border: 1px solid var(--border-color); margin-bottom: 1rem; padding: 2rem; }
+    .case-study-content h3 { font-size: 1.75rem; }
+    .case-study-metrics { gap: 2rem; }
     .formula-banner code { font-size: 0.9rem; word-break: break-all; white-space: pre-wrap; padding: 0 1rem; }
     .hero-visual { display: block; width: 100%; overflow: hidden; padding: 1rem 0 2rem 0; }
     .mock-sheet { max-width: 100%; width: 100%; font-size: 0.85rem; }
